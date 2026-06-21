@@ -3,9 +3,11 @@ export const arbol = {
     pregunta: "¡Hola! Soy tu orientador académico virtual. ¿En qué te puedo ayudar? Podés consultarme sobre elegir una carrera, pedir información sobre una carrera específica, o sobre becas y pasantías.",
     descripcion: "Inicio (menú principal)",
     opciones: [
-      { palabras: ["que estudio", "que estudiar", "elegir carrera", "no se que estudiar", "no se que carrera", "que carrera elijo", "vocacion", "orientacion vocacional", "ayuda para elegir"], destino: "N1" },
+      { palabras: ["estudio","que estudio", "que estudiar", "elegir carrera", "no se que estudiar", "no se que carrera", "que carrera elijo", "vocacion", "orientacion vocacional", "ayuda para elegir", "carrera", "que hago"], destino: "N1" },
       { palabras: ["informacion", "info", "carrera de", "sobre la carrera", "cuanto dura", "duracion de la carrera", "datos sobre", "quiero saber sobre", "requisitos", "materias"], destino: "N2" },
-      { palabras: ["beca", "pasantia", "practica laboral", "trabajo mientras estudio", "ayuda economica", "financiacion", "experiencia laboral"], destino: "N3" },
+      { palabras: ["beca", "becas"], hoja: "Las becas suelen otorgarse combinando criterios de mérito académico (rendimiento, promedio) y situación socioeconómica; conviene consultar en bienestar estudiantil de tu institución." },
+      { palabras: ["pasantia", "pasantias", "practica", "practicas", "practica laboral"], hoja: "Las pasantías suelen realizarse en empresas externas a través de bolsas de empleo o convenios que tenga tu institución con el sector privado, y son una buena forma de ganar experiencia mientras estudiás." },
+      { palabras: ["becas y pasantias", "becas y pasantías", "becas o pasantias", "becas o pasantías", "becas/pasantias", "becas/pasantías", "beca y pasantia", "beca y pasantía"], destino: "N3" },
     ],
   },
 
@@ -14,7 +16,7 @@ export const arbol = {
     pregunta: "¿Te gusta más la tecnología/números o trabajar con personas?",
     descripcion: "Vocación: tecnología vs. personas",
     opciones: [
-      { palabras: ["tecnologia", "numeros", "compu", "matematica"], destino: "N1a" },
+      { palabras: ["tecnologia", "numeros", "compu", "matematica", "computacion", "computadora"], destino: "N1a" },
       { palabras: ["personas", "ayudar", "social", "gente"], destino: "N1b" },
     ],
   },
@@ -30,8 +32,8 @@ export const arbol = {
     pregunta: "¿Te interesa más arreglar/armar equipos físicos o programar software?",
     descripcion: "Interés: hardware vs. software",
     opciones: [
-      { palabras: ["equipos", "hardware", "armar", "reparar"], hoja: "Te puede interesar Electrónica o Mecánica." },
-      { palabras: ["programar", "software", "codigo", "sistemas"], hoja: "Te puede interesar Informática o Análisis de Sistemas." },
+      { palabras: ["equipos", "hardware", "armar", "reparar", "taller", "laboratorio", "arreglar"], hoja: "Te puede interesar Electrónica o Mecánica." },
+      { palabras: ["programacion","programar", "software", "codigo", "sistemas", "desarrollo"], hoja: "Te puede interesar Informática o Análisis de Sistemas." },
     ],
   },
   N1a2: {
