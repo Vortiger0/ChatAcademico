@@ -1,9 +1,3 @@
-// =========================================================================
-// Servidor Express — Backend del chatbot de orientación académica.
-// Expone un endpoint POST /api/chat que recibe el nodo actual y el mensaje
-// del usuario, evalúa el árbol de decisión, y devuelve la respuesta.
-// =========================================================================
-
 import express from "express";
 import cors from "cors";
 import { arbol, MENSAJE_DEFAULT, MAX_INTENTOS, normalizar } from "./arbol.js";
@@ -14,9 +8,6 @@ const PUERTO = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// ---------- Endpoint principal del chatbot ----------
-// Body esperado: { nodoActual: "N0", mensaje: "texto del usuario", intentosFallidos: 0 }
-// Devuelve: { respuesta, nodoActual, intentosFallidos, esHoja, reinicio }
 
 app.post("/api/chat", (req, res) => {
   const { nodoActual = "N0", mensaje = "", intentosFallidos = 0 } = req.body;
@@ -40,7 +31,7 @@ app.post("/api/chat", (req, res) => {
     }
   }
 
-  // Caso 1: se encontró una palabra clave válida
+  // se encontró una palabra clave válida
   if (opcionEncontrada) {
     if (opcionEncontrada.hoja) {
       return res.json({
@@ -62,7 +53,7 @@ app.post("/api/chat", (req, res) => {
     });
   }
 
-  // Caso 2: no se encontró ninguna palabra clave esperada en este nodo
+  // no se encontró ninguna palabra clave esperada en este nodo
   if (nodoActual === "N0") {
     return res.json({
       respuesta: MENSAJE_DEFAULT,
@@ -99,7 +90,7 @@ app.post("/api/chat", (req, res) => {
   });
 });
 
-// ---------- Endpoint inicial: mensaje de bienvenida ----------
+// mensaje de bienvenida 
 
 app.get("/api/inicio", (req, res) => {
   res.json({

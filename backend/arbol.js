@@ -1,16 +1,11 @@
-// =========================================================================
-// Árbol de decisión del chatbot de orientación académica.
-// Mismo árbol diseñado en draw.io, ahora vive en el backend (Express).
-// =========================================================================
-
 export const arbol = {
   N0: {
     pregunta: "¡Hola! Soy tu orientador académico virtual. ¿En qué te puedo ayudar? Podés consultarme sobre elegir una carrera, pedir información sobre una carrera específica, o sobre becas y pasantías.",
     descripcion: "Inicio (menú principal)",
     opciones: [
-      { palabras: ["carrera", "que estudio", "que estudiar", "elegir carrera", "no se que estudiar"], destino: "N1" },
-      { palabras: ["informacion", "info", "carrera de", "sobre la carrera", "cuanto dura"], destino: "N2" },
-      { palabras: ["beca", "pasantia", "practica laboral", "trabajo mientras estudio"], destino: "N3" },
+      { palabras: ["que estudio", "que estudiar", "elegir carrera", "no se que estudiar", "no se que carrera", "que carrera elijo", "vocacion", "orientacion vocacional", "ayuda para elegir"], destino: "N1" },
+      { palabras: ["informacion", "info", "carrera de", "sobre la carrera", "cuanto dura", "duracion de la carrera", "datos sobre", "quiero saber sobre", "requisitos", "materias"], destino: "N2" },
+      { palabras: ["beca", "pasantia", "practica laboral", "trabajo mientras estudio", "ayuda economica", "financiacion", "experiencia laboral"], destino: "N3" },
     ],
   },
 
