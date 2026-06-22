@@ -56,7 +56,7 @@ async function enviarMensaje() {
   const texto = textoInput.value.trim();
   if (texto === "") return;
 
-  agregarMensaje("Vos", texto, "mensaje--usuario");
+  agregarMensaje("Tu", texto, "mensaje--usuario");
   textoInput.value = "";
 
   try {
